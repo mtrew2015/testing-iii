@@ -7,12 +7,12 @@ import 'react-testing-library/cleanup-after-each';
 afterEach(cleanup);
 
 describe('The Display Component', () => {
-  test('it renders red-led to start', () => {
-    const {getByTestId} = render (<Display className = 'red-led'/>);
-    getByTestId('red-led')
+  test('it renders green-led to start', () => {
+    const {getByTestId} = render (<Display className = 'green-led'/>);
+    getByTestId('green-led')
   })
-  test('it is locked at the start', () => {
-    const {getByTestId} = render(<Display className = 'red-led'/>)
-    getByTestId('locked-class')
+  test('it is unlocked at the start', () => {
+    const {getByTestId} = render(<Display className = 'green-led'/>)
+    getByTestId('unlocked-class')
   })
 })
