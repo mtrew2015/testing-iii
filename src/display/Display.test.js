@@ -26,11 +26,13 @@ describe('displays the correct text based on props', () => {
   const component = render(<Display closed ='false'> </Display>)
   const closed = component.getByTestId('closed-class')
   expect(closed).toHaveTextContent(/closed/i);
+  expect(closed).toHaveClass('red-led')
 })
   test('it is open when open props are passed', () => {
     const component = render(<Dashboard closed='false'> </Dashboard>)
     const closed = component.getByTestId('closed-class')
     expect(closed).toHaveTextContent(/open/i);
+    expect(closed).toHaveClass('green-led')
   })
 })
 
