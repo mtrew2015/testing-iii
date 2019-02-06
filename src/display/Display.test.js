@@ -32,5 +32,17 @@ describe('displays the correct text based on props', () => {
     const closed = component.getByTestId('closed-class')
     expect(closed).toHaveTextContent(/open/i);
   })
+})
 
+describe('displays correct locked or unlocked status', () => {
+  test('shows locked when locked', () => {
+    const component = render(<Dashboard locked='true'/>)
+    const locked = component.getByTestId('unlocked-class')
+    expect(locked).toHaveTextContent('locked')
+  })
+  test('shows unlocked when unlocked', () => {
+    const component = render(<Dashboard locked='false' />)
+    const locked = component.getByTestId('unlocked-class')
+    expect(locked).toHaveTextContent(/unlocked/i)
+  })
 })
